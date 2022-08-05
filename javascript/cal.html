@@ -13,9 +13,102 @@
             right = Number(prompt('right?'));
             alert(left+right);
         </script> -->
-        <input type ="button" value="+" onclick="
+        <style>
+            input{
+                font-size: 2rem;
+                width: 300px;
+                height: 150px;
+            }
+        </style>
+        <input type ="button" value="+ calculator" onclick="
         left = Number(prompt('left?'));
         right = Number(prompt('right?'));
         alert(left+right);">
+        <hr>
+        <input id="l" type="text" placeholder="left">
+        +
+        <input id="r" type="text" placeholder="right">
+        <input id="e" type="button" value="=" onclick="
+            let lv = document.querySelector('#l').value; 
+            let rv = document.querySelector('#r').value;
+            alert(Number(lv)+ Number(rv))">
+<!-- 변수 만들어 줄때 let 을 붙이고 하믄 된다 -->
+
+        <hr>
+        <!-- 클릭하지 않고 바로바로 결과가 나오게 만들기 -->
+        <input id="l2" type="text" placeholder="left" onchange=" 
+        // 이 웹페이지에 있는 l2값과 
+        let lv2 = document.querySelector('#l2').value;
+        //  이 웹페이지에 있는 r2의 값을
+        let rv2 = document.querySelector('#r2').value;
+        // 더한다
+        // 그 결과를 e2의 value로 적용한다.
+        let 결과 =  (Number(lv2)+ Number(rv2))
+        document.querySelector('#result').value = 결과;
+        // let 은 처음 변수 지정할때 시작하는 명령어이고 이후에는 let없이 쓰면 overwrighting도,ㅣㅁ
+        ">
+        +
+        <input id="r2" type="text" placeholder="right" onchange=" 
+        // 이 웹페이지에 있는 l2값과 
+        lv2 = document.querySelector('#l2').value;
+        //  이 웹페이지에 있는 r2의 값을
+        rv2 = document.querySelector('#r2').value;
+        // 더한다
+        // 그 결과를 e2의 value로 적용한다.
+        결과 =  (Number(lv2)+ Number(rv2));
+        document.querySelector('#result').value = 결과;
+        ">
+        =
+        <input id="result" type= "text";>
+<!-- 결과값에 위의 document.querySelector 와같은 코드를 넣으면 바로 보여지지 않고 마지막을 거쳐서 실행되게 한다. 그래서 마지막은 안한다-->
+        
+        <hr>
+    <h1>뺄셈기</h1>
+        <input id="l3" type="text" placeholder="left" onchange=" 
+        // 이 웹페이지에 있는 l2값과 
+        let lv3 = document.querySelector('#l3').value;
+        //  이 웹페이지에 있는 r2의 값을
+        let rv3 = document.querySelector('#r3').value;
+        // 더한다
+        // 그 결과를 e2의 value로 적용한다.
+        let 결과2 =  (Number(lv3) - Number(rv3));
+        document.querySelector('#result2').value = 결과2;
+        // let 은 처음 변수 지정할때 시작하는 명령어이고 이후에는 let없이 쓰면 overwrighting도,ㅣㅁ
+        ">
+        - 
+        <input id="r3" type="text" placeholder="right" onchange=" 
+        // 이 웹페이지에 있는 l2값과 
+        lv3 = document.querySelector('#l3').value;
+        //  이 웹페이지에 있는 r2의 값을
+        rv3 = document.querySelector('#r3').value;
+        // 더한다
+        // 그 결과를 e2의 value로 적용한다.
+        결과2 =  (Number(lv3) - Number(rv3));
+        document.querySelector('#result2').value = 결과2;
+        ">
+        =
+        <input id="result2" type= "text";>    
+        
+<!-- 함수로 만들기  -->
+    <hr>
+    <h1>함수로 만든 뺄셈기</h1>
+        <script>
+            function minus(){
+                debugger; // 디버깅 할수 있는 함수 디버거
+                lv3 = document.querySelector('#l3').value;
+                rv3 = document.querySelector('#r3').value;
+                결과2 =  (Number(lv3) - Number(rv3));
+                document.querySelector('#result2').value = 결과2;
+            }
+        </script>
+        <input id="l3" type="text" placeholder="left" onchange=" 
+        minus();">
+        <input id="r3" type="text" placeholder="right" onchange=" 
+        minus();"
+
+        <input id="result2" type= "text";>    
+
 </body>
 </html>
+
+<!-- 함수 만들기 function sum(left, right) { return left+right} -->
